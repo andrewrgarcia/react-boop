@@ -1,19 +1,48 @@
 {
   "name": "react-boop",
   "version": "1.0.0",
+  "description": "A simple, responsive virtual joystick for React.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
-  },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
-  "description": "A simple virtual joystick component for React",
-  "keywords": ["react", "joystick", "boop", "virtual", "mobile", "control"],
+  "keywords": [
+    "react",
+    "joystick",
+    "boop",
+    "virtual",
+    "mobile",
+    "control"
+  ],
   "author": "Your Name",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "jest": "^29.7.0",
+    "rollup": "^4.34.8",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "files": [
+    "dist"
+  ]
 }
