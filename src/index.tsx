@@ -40,6 +40,7 @@ export function VirtualJoystick({ onChange }: JoystickProps) {
   return (
     <div
       ref={joystickRef}
+      role="button"
       className="absolute top-4 left-4 w-24 h-24 bg-gray-300 rounded-full opacity-50 select-none"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -49,4 +50,5 @@ export function VirtualJoystick({ onChange }: JoystickProps) {
       <div className="absolute left-1/2 top-1/2 w-10 h-10 bg-gray-700 rounded-full -translate-x-1/2 -translate-y-1/2" />
     </div>
   );
+  
 }
