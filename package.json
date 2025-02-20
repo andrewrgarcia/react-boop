@@ -1,0 +1,19 @@
+{
+  "name": "react-boop",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "description": "A simple virtual joystick component for React",
+  "keywords": ["react", "joystick", "boop", "virtual", "mobile", "control"],
+  "author": "Your Name",
+  "license": "MIT"
+}
