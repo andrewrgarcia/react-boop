@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/andrewrgarcia/react-boop.git"
   },
-  "keywords": ["react", "joystick", "mobile", "virtual-joystick", "typescript","control"],
+  "keywords": ["react", "joystick", "mobile", "virtual-joystick", "typescript", "control", "touch", "gamepad", "UI"],
   "author": "Andrew Garcia",
   "license": "MIT",
   "bugs": {
@@ -46,7 +46,12 @@
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "src/index.tsx"
   ]
 }
