@@ -38,39 +38,21 @@
 
   <script type="text/javascript">
     const { VirtualJoystick } = window.reactBoop;
-  
+
     function App() {
-      const vectorDisplay = React.useRef(null);
-  
       const handleJoystickMove = (vector) => {
-        if (vectorDisplay.current) {
-          vectorDisplay.current.textContent = `Joystick Vector: x=${vector.x.toFixed(2)}, y=${vector.y.toFixed(2)}`;
-        }
+        console.log("Joystick Vector:", vector);
       };
-  
-      return React.createElement(
-        "div",
-        null,
-        React.createElement("div", {
-          ref: vectorDisplay,
-          style: {
-            position: "absolute",
-            top: "20px",
-            left: "20px",
-            backgroundColor: "#fff",
-            padding: "10px",
-            borderRadius: "8px",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-            fontSize: "16px",
-          },
-        }),
+
+      return React.createElement("div", null, 
         React.createElement(VirtualJoystick, { onChange: handleJoystickMove })
       );
     }
-  
-    // React 18: Use createRoot API
-    const root = ReactDOM.createRoot(document.getElementById("joystick-container"));
-    root.render(React.createElement(App));
-  </script>  
+
+    ReactDOM.render(
+      React.createElement(App),
+      document.getElementById("joystick-container")
+    );
+  </script>
 </body>
 </html>
