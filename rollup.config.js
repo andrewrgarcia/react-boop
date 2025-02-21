@@ -19,6 +19,7 @@ export default {
       file: "dist/index.umd.js",
       format: "umd",
       name: "reactBoop",
+      exports: "named",
       sourcemap: true,
       globals: {
         react: "React",
