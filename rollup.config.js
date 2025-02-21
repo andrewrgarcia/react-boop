@@ -14,6 +14,16 @@ export default {
       file: "dist/index.esm.js",
       format: "esm",
       sourcemap: true
+    },
+    {
+      file: "dist/index.umd.js",
+      format: "umd",
+      name: "reactBoop",
+      sourcemap: true,
+      globals: {
+        react: "React",
+        "react-dom": "ReactDOM"
+      }
     }
   ],
   plugins: [resolve(), commonjs(), typescript()],

@@ -52,6 +52,6 @@ function App() {
 
 ## Links
 
-- [GitHub Repository](https://github.com/your-username/react-boop)
-- [Report an Issue](https://github.com/your-username/react-boop/issues)
+- [GitHub Repository](https://github.com/andrewrgarcia/react-boop)
+- [Report an Issue](https://github.com/andrewrgarcia/react-boop/issues)
 ```

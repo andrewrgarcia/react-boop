@@ -1,6 +1,7 @@
 {
   "name": "react-boop",
   "version": "1.0.0",
+  "type": "module",
   "description": "A lightweight, responsive virtual joystick for React.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -15,7 +16,17 @@
     "type": "git",
     "url": "git+https://github.com/andrewrgarcia/react-boop.git"
   },
-  "keywords": ["react", "joystick", "mobile", "virtual-joystick", "typescript", "control", "touch", "gamepad", "UI"],
+  "keywords": [
+    "react",
+    "joystick",
+    "mobile",
+    "virtual-joystick",
+    "typescript",
+    "control",
+    "touch",
+    "gamepad",
+    "UI"
+  ],
   "author": "Andrew Garcia",
   "license": "MIT",
   "bugs": {
@@ -24,7 +35,8 @@
   "homepage": "https://github.com/andrewrgarcia/react-boop#readme",
   "dependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
@@ -50,6 +62,7 @@
     "node": ">=14.0.0"
   },
   "sideEffects": false,
+  "unpkg": "dist/index.umd.js",
   "files": [
     "dist",
     "src/index.tsx"
