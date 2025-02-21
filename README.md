@@ -1,4 +1,4 @@
-# react-boop ![npm](https://img.shields.io/npm/v/react-boop) ![License](https://img.shields.io/github/license/andrewrgarcia/react-boop) ![TypeScript](https://img.shields.io/badge/TypeScript-Yes-blue)
+# react-boop [![npm](https://img.shields.io/npm/v/react-boop)](https://www.npmjs.com/package/react-boop) [![License](https://img.shields.io/github/license/andrewrgarcia/react-boop)](LICENSE) ![TypeScript](https://img.shields.io/badge/TypeScript-Yes-blue)
 
 A lightweight virtual joystick for React, **designed exclusively for mobile devices**📱. Perfect for mobile web games and interactive touch-based applications. Simple integration with smooth and intuitive controls for touchscreen environments.
 
