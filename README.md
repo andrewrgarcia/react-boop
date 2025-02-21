@@ -1,12 +1,25 @@
-# react-boop
+# react-boop ![npm](https://img.shields.io/npm/v/react-boop) ![License](https://img.shields.io/github/license/andrewrgarcia/react-boop) ![TypeScript](https://img.shields.io/badge/TypeScript-Yes-blue)
 
-A lightweight virtual joystick for React. Designed for smooth, intuitive mobile controls with easy integration.
+A lightweight virtual joystick for React, **designed exclusively for mobile devices**📱. Perfect for mobile web games and interactive touch-based applications. Simple integration with smooth and intuitive controls for touchscreen environments.
+
+## Live Demo
+
+Try the joystick in action on a mobile device:
+
+👉 [**Live Demo**](https://andrewrgarcia.github.io/react-boop/demo.html)
+
 
 ## Features
 
-- Mobile-friendly virtual joystick
+- **Exclusively for Mobile Devices** – Only responds to touch events (mobile and tablet devices).
 - Written in **TypeScript**, compatible with both TypeScript and JavaScript React projects
 - Simple and customizable
+
+---
+
+## Important Note
+
+This component is designed to work **only on mobile and touchscreen devices**. It does not respond to mouse or desktop inputs.
 
 ---
 
@@ -46,7 +59,7 @@ function App() {
 
 ## License
 
-[MIT](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
@@ -54,4 +67,3 @@ function App() {
 
 - [GitHub Repository](https://github.com/andrewrgarcia/react-boop)
 - [Report an Issue](https://github.com/andrewrgarcia/react-boop/issues)
-```
