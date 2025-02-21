@@ -13,7 +13,7 @@
   </script>
 
   <!-- Load react-boop from unpkg -->
-  <script src="https://unpkg.com/react-boop@1.0.1/dist/index.umd.js"></script>
+  <script src="https://unpkg.com/react-boop/dist/index.umd.js"></script>
 
   <style>
     body {
@@ -37,7 +37,7 @@
   <div id="joystick-container"></div>
 
   <script type="text/javascript">
-    const { VirtualJoystick } = window["reactBoop"];
+    const { VirtualJoystick } = window.reactBoop;
 
     function App() {
       const handleJoystickMove = (vector) => {

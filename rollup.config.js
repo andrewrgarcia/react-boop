@@ -28,5 +28,5 @@ export default {
     }
   ],
   plugins: [resolve(), commonjs(), typescript()],
-  external: ["react", "react-dom"]
+  external: (id) => /^react($|\/)/.test(id) || /^react-dom($|\/)/.test(id)
 };

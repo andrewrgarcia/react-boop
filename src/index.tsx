@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 interface JoystickProps {
   onChange: (vector: { x: number; y: number }) => void;
@@ -8,6 +8,10 @@ export function VirtualJoystick({ onChange }: JoystickProps) {
   const joystickRef = useRef<HTMLDivElement>(null);
   const [dragging, setDragging] = useState(false);
   const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
+
+  useEffect(() => {
+    console.log("VirtualJoystick component mounted!");
+  }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     const touch = e.touches[0];
@@ -37,18 +41,38 @@ export function VirtualJoystick({ onChange }: JoystickProps) {
     onChange({ x: 0, y: 0 });
   };
 
+  console.log("Rendering joystick...");
+
   return (
     <div
       ref={joystickRef}
       role="button"
-      className="absolute top-4 left-4 w-24 h-24 bg-gray-300 rounded-full opacity-50 select-none"
+      style={{
+        width: "100px",
+        height: "100px",
+        backgroundColor: "#333",
+        borderRadius: "50%",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        opacity: 0.8,
+      }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      style={{ touchAction: "none" }}
     >
-      <div className="absolute left-1/2 top-1/2 w-10 h-10 bg-gray-700 rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div
+        style={{
+          width: "40px",
+          height: "40px",
+          backgroundColor: "#fff",
+          borderRadius: "50%",
+          position: "absolute",
+          top: "30px",
+          left: "30px",
+        }}
+      />
     </div>
   );
-  
 }
