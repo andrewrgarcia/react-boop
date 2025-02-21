@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>react-boop Demo</title>
-  <script src="https://unpkg.com/react@19/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/react-boop/dist/index.umd.js"></script>
+  
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  
+  <script>
+    window.process = { env: { NODE_ENV: 'production' } };
+  </script>
+
+  <!-- Load react-boop from unpkg -->
+  <script src="https://unpkg.com/react-boop@1.0.1/dist/index.umd.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -29,21 +37,21 @@
   <div id="joystick-container"></div>
 
   <script type="text/javascript">
-    const { VirtualJoystick } = window['react-boop'];
+    const { VirtualJoystick } = window["reactBoop"];
 
     function App() {
       const handleJoystickMove = (vector) => {
         console.log("Joystick Vector:", vector);
       };
 
-      return React.createElement('div', null, 
+      return React.createElement("div", null, 
         React.createElement(VirtualJoystick, { onChange: handleJoystickMove })
       );
     }
 
     ReactDOM.render(
       React.createElement(App),
-      document.getElementById('joystick-container')
+      document.getElementById("joystick-container")
     );
   </script>
 </body>
