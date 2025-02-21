@@ -7,6 +7,7 @@ A lightweight virtual joystick for React, **designed exclusively for mobile devi
 Try the joystick in action on a mobile device:
 
 👉 [**Live Demo (Try it on your Phone or Tablet)**](https://andrewrgarcia.github.io/react-boop/demo.html)
+
 _Designed to work **only on mobile and touchscreen devices**. It will not respond to mouse or desktop inputs._
 
 
