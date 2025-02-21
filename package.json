@@ -1,6 +1,6 @@
 {
   "name": "react-boop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
@@ -42,7 +42,6 @@
     "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "tslib": "^2.8.1"
   },
-  
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
