@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+// import React, { useState, useRef, useEffect } from "react";
 
 interface JoystickProps {
   onChange: (vector: { x: number; y: number }) => void;
@@ -7,10 +8,14 @@ interface JoystickProps {
   size?: number; // Joystick size in pixels
 }
 
-export function VirtualJoystick({ onChange, className = "", style = {}, size = 96 }: JoystickProps) {
+export function VirtualJoystick({ onChange, style = {}, size = 96 }: JoystickProps) {
   const joystickRef = useRef<HTMLDivElement>(null);
   const [dragging, setDragging] = useState(false);
   const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
+
+  // useEffect(() => {
+  //   console.log("VirtualJoystick component mounted!");
+  // }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     const touch = e.touches[0];
@@ -40,30 +45,41 @@ export function VirtualJoystick({ onChange, className = "", style = {}, size = 9
     onChange({ x: 0, y: 0 });
   };
 
-  return (
+return (
+  <div
+    ref={joystickRef}
+    role="button"
+    style={{
+      width: size || 96, // Fallback to 96px if not provided
+      height: size || 96,
+      backgroundColor: "#D1D5DB",
+      borderRadius: "50%",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      opacity: 0.5,
+      touchAction: "none",
+      ...style, // Allow custom overrides
+    }}
+    onTouchStart={handleTouchStart}
+    onTouchMove={handleTouchMove}
+    onTouchEnd={handleTouchEnd}
+  >
     <div
-      ref={joystickRef}
-      className={`absolute bg-gray-300 rounded-full opacity-50 select-none ${className}`}
       style={{
-        width: size,
-        height: size,
-        touchAction: "none",
-        ...style,
+        width: (size || 96) / 2.5, // Safe fallback
+        height: (size || 96) / 2.5,
+        backgroundColor: "#374151",
+        borderRadius: "50%",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
       }}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      <div
-        className="absolute bg-gray-700 rounded-full"
-        style={{
-          width: size / 2.5,
-          height: size / 2.5,
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      />
-    </div>
-  );
+    />
+  </div>
+);
+
 }
+
