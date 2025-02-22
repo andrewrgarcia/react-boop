@@ -1,6 +1,6 @@
 {
   "name": "react-boop",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "type": "module",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.js",
