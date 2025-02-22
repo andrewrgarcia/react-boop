@@ -1,17 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 interface JoystickProps {
   onChange: (vector: { x: number; y: number }) => void;
+  className?: string; // For external class styling
+  style?: React.CSSProperties; // Inline styling
+  size?: number; // Joystick size in pixels
 }
 
-export function VirtualJoystick({ onChange }: JoystickProps) {
+export function VirtualJoystick({ onChange, className = "", style = {}, size = 96 }: JoystickProps) {
   const joystickRef = useRef<HTMLDivElement>(null);
   const [dragging, setDragging] = useState(false);
   const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
-
-  useEffect(() => {
-    console.log("VirtualJoystick component mounted!");
-  }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     const touch = e.touches[0];
@@ -24,7 +23,7 @@ export function VirtualJoystick({ onChange }: JoystickProps) {
     const touch = e.touches[0];
     const deltaX = touch.clientX - origin.x;
     const deltaY = touch.clientY - origin.y;
-    const maxDistance = 50;
+    const maxDistance = size / 2;
     let dx = deltaX, dy = deltaY;
     const distance = Math.sqrt(dx * dx + dy * dy);
     if (distance > maxDistance) {
@@ -41,36 +40,28 @@ export function VirtualJoystick({ onChange }: JoystickProps) {
     onChange({ x: 0, y: 0 });
   };
 
-  console.log("Rendering joystick...");
-
   return (
     <div
       ref={joystickRef}
-      role="button"
+      className={`absolute bg-gray-300 rounded-full opacity-50 select-none ${className}`}
       style={{
-        width: "100px",
-        height: "100px",
-        backgroundColor: "#D1D5DB",
-        borderRadius: "50%",
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        opacity: 0.5,
+        width: size,
+        height: size,
+        touchAction: "none",
+        ...style,
       }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       <div
+        className="absolute bg-gray-700 rounded-full"
         style={{
-          width: "40px",
-          height: "40px",
-          backgroundColor: "#374151",
-          borderRadius: "50%",
-          position: "absolute",
-          top: "30px",
-          left: "30px",
+          width: size / 2.5,
+          height: size / 2.5,
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
         }}
       />
     </div>

@@ -1,6 +1,8 @@
 # react-boop [![npm](https://img.shields.io/npm/v/react-boop)](https://www.npmjs.com/package/react-boop) [![License](https://img.shields.io/github/license/andrewrgarcia/react-boop)](LICENSE) ![TypeScript](https://img.shields.io/badge/TypeScript-Yes-blue)
 
-A lightweight virtual joystick for React, **designed exclusively for mobile devices**📱. Perfect for mobile web games and interactive touch-based applications. Simple integration with smooth and intuitive controls for touchscreen environments.
+
+A flexible virtual joystick component for React, built with TypeScript **for mobile devices**📱 Simple integration with smooth and intuitive controls for touchscreen environments.
+
 
 ## Live Demo
 
@@ -15,8 +17,7 @@ _Designed to work **only on mobile and touchscreen devices**. It will not respon
 
 - **Exclusively for Mobile Devices** – Only responds to touch events (mobile and tablet devices).
 - Written in **TypeScript**, compatible with both TypeScript and JavaScript React projects
-- Simple and customizable
-
+- Fully customizable size and styles.
 
 ---
 
@@ -29,28 +30,30 @@ npm install react-boop
 ---
 
 ## Usage
-
-Basic example:
-
 ```tsx
 import { VirtualJoystick } from "react-boop";
 
-function App() {
-  const handleJoystickMove = (vector: { x: number; y: number }) => {
-    console.log("Joystick Vector:", vector);
-  };
-
-  return <VirtualJoystick onChange={handleJoystickMove} />;
+export default function App() {
+  return (
+    <VirtualJoystick
+      size={150}
+      onChange={(vector) => console.log(vector)}
+      className="custom-joystick"
+      style={{ backgroundColor: "#4A90E2" }}
+    />
+  );
 }
 ```
 
----
-
 ## Props
 
-| Prop      | Type                                  | Description                           |
-|-----------|---------------------------------------|---------------------------------------|
-| `onChange` | `(vector: { x: number; y: number }) => void` | Triggered on joystick movement |
+| Prop       | Type               | Default | Description                              |
+|-----------|--------------------|---------|------------------------------------------|
+| `onChange` | `(vector: {x: number, y: number}) => void` | Required | Callback function for joystick movement. |
+| `className`| `string`           | `""`    | Custom CSS classes for styling.          |
+| `style`    | `React.CSSProperties` | `{}` | Inline styling for the joystick.        |
+| `size`     | `number`           | `96`    | Size of the joystick in pixels.          |
+
 
 ---
 
